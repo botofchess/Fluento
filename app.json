@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Fluento",
+    "slug": "fluento",
+    "scheme": "fluento",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0A0C13"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fluento.app"
+    },
+    "android": {
+      "package": "com.fluento.app"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
