@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { PremiumCard } from '../components/PremiumCard';
-import { scenarios } from '../data/mockData';
+import { useFluento } from '../state/FluentoContext';
 import { appTheme } from '../theme/theme';
 
 const tracks = [
@@ -14,6 +14,8 @@ const tracks = [
 ];
 
 export function AcademyScreen() {
+  const { state } = useFluento();
+
   return (
     <ScrollView style={styles.root} contentContainerStyle={styles.content}>
       <PremiumCard title="Elite Communication Academy" subtitle="Structured levels + final AI exam">
@@ -24,17 +26,15 @@ export function AcademyScreen() {
         </View>
       </PremiumCard>
 
-      <PremiumCard title="Real-Life Scenario Engine" subtitle="Difficulty adapts to your weak signals">
-        <View style={styles.list}>
-          {scenarios.map((scenario) => (
-            <Text key={scenario} style={styles.item}>• {scenario}</Text>
-          ))}
-        </View>
+      <PremiumCard title="Psychology Engine" subtitle="Visible growth + discipline loop">
+        <Text style={styles.item}>You improved 3.2% this week.</Text>
+        <Text style={styles.item}>Current streak: {state.streak} days.</Text>
+        <Text style={styles.item}>Grandmaster unlock target: speaking rating 2500.</Text>
       </PremiumCard>
 
       <PremiumCard title="Monetization Tiers" subtitle="Ultra-premium positioning">
-        <Text style={styles.item}>Free: limited daily sessions + basic correction</Text>
-        <Text style={styles.item}>Premium: unlimited AI labs + leaderboards + analytics</Text>
+        <Text style={styles.item}>Free: limited daily practice + basic AI correction</Text>
+        <Text style={styles.item}>Premium: full speaking, writing, debate, analytics, leaderboards</Text>
         <Text style={styles.item}>Plans: Monthly, Yearly, Lifetime Elite, Student, Corporate</Text>
       </PremiumCard>
     </ScrollView>

@@ -1,12 +1,4 @@
-import { ProgressPoint, RatingMetric, VocabularyWord } from '../types';
-
-export const ratings: RatingMetric[] = [
-  { label: 'Speaking', value: 1832, delta: 48 },
-  { label: 'Writing', value: 1715, delta: 32 },
-  { label: 'Vocabulary', value: 1660, delta: 41 },
-  { label: 'Grammar', value: 1748, delta: 26 },
-  { label: 'Confidence', value: 79, delta: 6 }
-];
+import { ProgressPoint, VocabularyWord } from '../types';
 
 export const weeklyProgress: ProgressPoint[] = [
   { week: 'W1', value: 65 },
@@ -15,6 +7,13 @@ export const weeklyProgress: ProgressPoint[] = [
   { week: 'W4', value: 81 },
   { week: 'W5', value: 84 },
   { week: 'W6', value: 88 }
+];
+
+export const leaderboard = [
+  { rank: 1, user: 'A. Mercer', country: 'UK', rating: 2476 },
+  { rank: 2, user: 'K. Patel', country: 'IN', rating: 2418 },
+  { rank: 3, user: 'J. Rivera', country: 'US', rating: 2391 },
+  { rank: 17, user: 'You', country: 'Global', rating: 1824 }
 ];
 
 export const scenarios = [

@@ -1,23 +1,19 @@
 # Fluento — Ultra-Premium AI Fluency App
 
-Fluento is a luxury-grade mobile experience for mastering spoken, written, and cognitive fluency in English (with multi-language expansion ready).
+Fluento is a luxury-grade mobile experience for mastering spoken, written, and thinking fluency with a chess-like progression loop.
 
-## Why this build is premium
-- Dark-first, royal-blue + gold visual system.
-- ELO-style fluency progression (0–3000).
-- AI-centered tutoring loops (speaking, writing, debate, interview, pronunciation).
-- Data-driven dashboard focused on measurable growth.
+## What is now implemented (real interactive scaffold)
+- **Stateful rating engine** with ELO-like updates after speaking, writing, and simulation sessions.
+- **Interactive AI Speaking Coach** with transcript input, analysis, correction, native rewrite, filler detection, and score deltas.
+- **Interactive Writing Master Lab** with multi-metric scoring and three rewrite styles.
+- **AI Debate/Interview Simulator** that evaluates confidence, argument structure, vocabulary sophistication, and professionalism.
+- **Data-rich dashboard** with dynamic ratings, streak stats, words mastered, generated daily plan, and leaderboard.
+- **Elite Vocabulary Builder** with mastery actions that update profile progression.
 
-## Core Modules in this scaffold
-1. **Dashboard** — Fluency rating, weekly graph, weakest-skill signal.
-2. **AI Speaking Coach** — live-style correction UX, confidence meter, accent modes.
-3. **Elite Vocabulary Builder** — high-value words with memory hooks and speech challenge prompts.
-4. **Elite Communication Academy** — scenario engine, course tracks, monetization tier design.
-
-## Stack
-- Expo + React Native + TypeScript
-- React Navigation tabs
-- Themed design system for a minimal premium UI
+## Architecture
+- `src/ai/fluencyEngine.ts`: local deterministic AI-scoring layer (replaceable by backend APIs later)
+- `src/state/FluentoContext.tsx`: global app state + rating updates + personalization plan generation
+- `src/screens/*`: product modules for dashboard, coach, writing lab, simulation, vocabulary
 
 ## Run locally
 ```bash
@@ -25,11 +21,9 @@ npm install
 npm run start
 ```
 
-## Product + AI architecture
-See [`docs/PRODUCT_BLUEPRINT.md`](docs/PRODUCT_BLUEPRINT.md) for:
-- Full feature specification
-- AI pipeline design
-- Rating engine model
-- Monetization architecture
-- Analytics and personalization strategy
-- Security and infra notes
+## Next integration step
+Swap local scoring functions with cloud AI endpoints for:
+- real-time speech recognition streaming
+- phoneme-level pronunciation grading
+- LLM rewrite and coaching prompts
+- secure user auth + cloud sync
